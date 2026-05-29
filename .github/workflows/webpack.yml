@@ -17,12 +17,17 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-
+    - name: json-to-file
+  # You may pin to the exact commit or the version.
+  # uses: devops-actions/json-to-file@709b07a59822663e2ead98d5d62139bfb80ab50e
+  uses: devops-actions/json-to-file@v1.0.5
+  with:
+    # The json you want to store
+    json: 
+    # The filename you want to store the json in
+    filename: 
+          
     - name: Build
-      run: |
+      run: 
         npm install
         npx webpack
